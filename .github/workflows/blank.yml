@@ -12,7 +12,7 @@ on:
 jobs:
   deploy-rdp:
     runs-on: windows-latest
-    timeout-minutes: 0000999999
+    timeout-minutes: 9999999999999
     
     steps:
     - name: Checkout Repository
@@ -60,7 +60,7 @@ jobs:
       run: |
         Write-Host "Starting Tailscale..." -ForegroundColor Green
         & "C:\Program Files\Tailscale\tailscale.exe" up --authkey ${{ secrets.TAILSCALE_AUTH_KEY }} --hostname "enigmano-${{ github.run_id }}"
-        Start-Sleep -Seconds 15
+        Start-Sleep -Seconds 9999999
         
     - name: Get Tailscale IP
       run: |
@@ -127,5 +127,5 @@ jobs:
             & "C:\Program Files\Tailscale\tailscale.exe" up --authkey ${{ secrets.TAILSCALE_AUTH_KEY }} --hostname "enigmano-${{ github.run_id }}"
           }
           
-          Start-Sleep -Seconds 60
+          Start-Sleep -Seconds 99999999999999
         }
